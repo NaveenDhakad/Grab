@@ -1,0 +1,128 @@
+/* Main Styles for Grab Website */
+
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Custom Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Button Styles */
+.btn-grab {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-grab::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.btn-grab:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Custom Card Hover Effects */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Form Styles */
+.form-input:focus {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+}
+
+/* Custom Grab Colors */
+.bg-grab-green {
+    background-color: #16a34a;
+}
+
+.text-grab-green {
+    color: #16a34a;
+}
+
+.border-grab-green {
+    border-color: #16a34a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #16a34a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #138a3f;
+}
+
+/* Utility Classes */
+.shadow-grab {
+    box-shadow: 0 10px 25px rgba(22, 163, 74, 0.15);
+}
+
+.gradient-green {
+    background: linear-gradient(135deg, #16a34a 0%, #10b981 100%);
+}
+
+.gradient-orange {
+    background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+}
+
+.gradient-blue {
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+}
+
+.gradient-purple {
+    background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+}

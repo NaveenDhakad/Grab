@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grab - Everyday Everything App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <form action="/auth/signin" method="get">
+    <header class="border-b bg-white sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="text-2xl font-bold text-green-600">Grab</div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="/transport" class="text-gray-700 hover:text-green-600">Transport</a>
+                    <a href="/food" class="text-gray-700 hover:text-green-600">Food</a>
+                    <a href="/packages" class="text-gray-700 hover:text-green-600">Packages</a>
+                    <a href="/business" class="text-gray-700 hover:text-green-600">Business</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button  class="hidden md:flex px-4 py-2 text-gray-700 hover:text-green-600">Sign In</button>
+                <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg">Download App</button>
+            </div>
+        </div>
+    </header>
+    </form>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-green-50 to-green-100 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                        #1 Super App in Southeast Asia
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                        Everyday Everything App
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Book rides, order food, send packages, and make payments all in one app. Your everyday needs, delivered.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-4 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-mobile-alt mr-2"></i>
+                            Download Grab App
+                        </button>
+                        <button class="border border-gray-300 text-gray-700 hover:bg-gray-50 text-lg px-8 py-4 rounded-lg flex items-center justify-center">
+                            Learn More
+                            <i class="fas fa-chevron-right ml-2"></i>
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-6 pt-4">
+                        <div class="flex items-center space-x-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600">4.8/5 rating</span>
+                        </div>
+                        <div class="text-gray-600">
+                            <span class="font-semibold">50M+</span> downloads
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://via.placeholder.com/400x600/22c55e/ffffff?text=Grab+App" 
+                         alt="Grab App Interface" 
+                         class="mx-auto rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">All your needs in one app</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From getting around to getting food delivered, Grab makes your life easier with reliable services.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div th:each="service : ${services}" class="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg rounded-lg p-8 text-center">
+                    <div th:class="'w-16 h-16 bg-' + ${service.color} + '-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-' + ${service.color} + '-600 transition-colors'">
+                        <i th:class="'fas fa-' + ${service.icon} + ' text-2xl text-' + ${service.color} + '-600 group-hover:text-white'"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" th:text="${service.title}"></h3>
+                    <p class="text-gray-600 mb-4" th:text="${service.description}"></p>
+                    <button th:class="'text-' + ${service.color} + '-600 hover:text-' + ${service.color} + '-700 flex items-center mx-auto'">
+                        Learn more <i class="fas fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why millions choose Grab</h2>
+                    <div class="space-y-6">
+                        <div th:each="feature : ${features}" class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i th:class="'fas fa-' + ${feature.icon} + ' text-green-600'"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2" th:text="${feature.title}"></h3>
+                                <p class="text-gray-600" th:text="${feature.description}"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://via.placeholder.com/500x500/22c55e/ffffff?text=Features" 
+                         alt="Grab Features" 
+                         class="rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Trusted by millions</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div th:each="stat : ${statistics}" class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-green-600 mb-2" th:text="${stat.value}"></div>
+                    <div class="text-gray-600" th:text="${stat.label}"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA Section -->
+    <section class="bg-gradient-to-r from-green-600 to-green-700 py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Get the Grab app today</h2>
+            <p class="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+                Join millions of users who trust Grab for their everyday needs. Download now and get started.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-lg flex items-center">
+                    <i class="fab fa-apple mr-2 text-xl"></i>
+                    Download for iOS
+                </button>
+                <button class="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-lg flex items-center">
+                    <i class="fab fa-google-play mr-2 text-xl"></i>
+                    Download for Android
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold text-green-400 mb-4">Grab</div>
+                    <p class="text-gray-400 mb-4">
+                        Southeast Asia's leading super app for transport, food delivery, and digital payments.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">GrabCar</a></li>
+                        <li><a href="#" class="hover:text-white">GrabBike</a></li>
+                        <li><a href="#" class="hover:text-white">GrabFood</a></li>
+                        <li><a href="#" class="hover:text-white">GrabExpress</a></li>
+                        <li><a href="#" class="hover:text-white">GrabPay</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="#" class="hover:text-white">Press</a></li>
+                        <li><a href="#" class="hover:text-white">Investor Relations</a></li>
+                        <li><a href="#" class="hover:text-white">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Safety</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Grab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add loading animation for service cards
+            const serviceCards = document.querySelectorAll('.group');
+            serviceCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

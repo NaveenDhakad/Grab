@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grab for Business - Corporate Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="border-b bg-white sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <a href="/" class="text-2xl font-bold text-green-600">Grab</a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="/transport" class="text-gray-700 hover:text-green-600">Transport</a>
+                    <a href="/food" class="text-gray-700 hover:text-green-600">Food</a>
+                    <a href="/packages" class="text-gray-700 hover:text-green-600">Packages</a>
+                    <a href="/business" class="text-green-600 font-medium">Business</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:flex px-4 py-2 text-gray-700 hover:text-green-600">Sign In</button>
+                <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg">Download App</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-purple-50 to-purple-100 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Grab for Business
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                        Corporate solutions
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Streamline your business operations with our comprehensive suite of services.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-4 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-briefcase mr-2"></i>
+                            Get Started
+                        </button>
+                        <button class="border border-gray-300 text-gray-700 hover:bg-gray-50 text-lg px-8 py-4 rounded-lg flex items-center justify-center">
+                            Contact Sales
+                            <i class="fas fa-chevron-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://via.placeholder.com/500x400/8b5cf6/ffffff?text=Grab+Business" 
+                         alt="Grab Business" 
+                         class="mx-auto rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Solutions -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Business solutions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive solutions designed to meet the needs of businesses of all sizes.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg rounded-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-600 transition-colors">
+                        <i class="fas fa-car text-2xl text-purple-600 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Corporate Transport</h3>
+                    <p class="text-gray-600 mb-4">Reliable transportation for your employees and clients.</p>
+                    <button class="text-purple-600 hover:text-purple-700 flex items-center mx-auto">
+                        Learn more <i class="fas fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div class="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg rounded-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-600 transition-colors">
+                        <i class="fas fa-utensils text-2xl text-orange-600 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Corporate Catering</h3>
+                    <p class="text-gray-600 mb-4">Food delivery for meetings, events, and office meals.</p>
+                    <button class="text-orange-600 hover:text-orange-700 flex items-center mx-auto">
+                        Learn more <i class="fas fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div class="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg rounded-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-box text-2xl text-blue-600 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Business Delivery</h3>
+                    <p class="text-gray-600 mb-4">Fast and reliable delivery for your business documents and packages.</p>
+                    <button class="text-blue-600 hover:text-blue-700 flex items-center mx-auto">
+                        Learn more <i class="fas fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <img src="https://via.placeholder.com/500x400/8b5cf6/ffffff?text=Business+Benefits" 
+                         alt="Business Benefits" 
+                         class="rounded-2xl shadow-2xl">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Benefits for your business</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-chart-line text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Cost Efficiency</h3>
+                                <p class="text-gray-600">
+                                    Reduce operational costs with our competitive pricing and consolidated billing.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Enhanced Security</h3>
+                                <p class="text-gray-600">
+                                    Advanced security features to protect your business and employees.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-file-invoice text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Simplified Reporting</h3>
+                                <p class="text-gray-600">
+                                    Comprehensive reporting and analytics to track expenses and usage.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-purple-600 p-12 text-white">
+                        <h2 class="text-3xl font-bold mb-6">Get in touch</h2>
+                        <p class="mb-8">Contact our sales team to learn more about our business solutions.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone mr-3"></i>
+                                <span>+1 (123) 456-7890</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope mr-3"></i>
+                                <span>business@grab.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-3"></i>
+                                <span>123 Business Ave, Singapore</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-12">
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Full Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Company</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Your company">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Your email">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Message</label>
+                                <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" rows="4" placeholder="How can we help?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-medium">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold text-green-400 mb-4">Grab</div>
+                    <p class="text-gray-400 mb-4">
+                        Southeast Asia's leading super app for transport, food delivery, and digital payments.

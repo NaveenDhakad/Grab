@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grab Transport - Ride Hailing Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="border-b bg-white sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <a href="/" class="text-2xl font-bold text-green-600">Grab</a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="/transport" class="text-green-600 font-medium">Transport</a>
+                    <a href="/food" class="text-gray-700 hover:text-green-600">Food</a>
+                    <a href="/packages" class="text-gray-700 hover:text-green-600">Packages</a>
+                    <a href="/business" class="text-gray-700 hover:text-green-600">Business</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:flex px-4 py-2 text-gray-700 hover:text-green-600">Sign In</button>
+                <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg">Download App</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-green-50 to-green-100 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Grab Transport
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                        Your ride, your way
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Book a ride that suits your needs, from affordable everyday rides to premium experiences.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-4 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-car mr-2"></i>
+                            Book a Ride
+                        </button>
+                        <button class="border border-gray-300 text-gray-700 hover:bg-gray-50 text-lg px-8 py-4 rounded-lg flex items-center justify-center">
+                            View Ride Options
+                            <i class="fas fa-chevron-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://via.placeholder.com/500x400/22c55e/ffffff?text=Grab+Transport" 
+                         alt="Grab Transport" 
+                         class="mx-auto rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ride Options -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Choose your ride</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From affordable everyday rides to premium experiences, we have options for every occasion.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg rounded-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-600 transition-colors">
+                        <i class="fas fa-car text-2xl text-green-600 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">GrabCar</h3>
+                    <p class="text-gray-600 mb-4">Comfortable rides for up to 4 passengers at affordable prices.</p>
+                    <button class="text-green-600 hover:text-green-700 flex items-center mx-auto">
+                        Learn more <i class="fas fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div class="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg rounded-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-car-side text-2xl text-blue-600 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">GrabCar Plus</h3>
+                    <p class="text-gray-600 mb-4">Premium rides with newer vehicles and highly-rated drivers.</p>
+                    <button class="text-blue-600 hover:text-blue-700 flex items-center mx-auto">
+                        Learn more <i class="fas fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div class="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg rounded-lg p-8 text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-600 transition-colors">
+                        <i class="fas fa-motorcycle text-2xl text-purple-600 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">GrabBike</h3>
+                    <p class="text-gray-600 mb-4">Beat the traffic with motorcycle rides for one passenger.</p>
+                    <button class="text-purple-600 hover:text-purple-700 flex items-center mx-auto">
+                        Learn more <i class="fas fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Process -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">How to book a ride</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Booking a ride with Grab is easy and convenient. Follow these simple steps.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600 font-bold text-xl">1</div>
+                    <h3 class="text-xl font-semibold mb-3">Open the app</h3>
+                    <p class="text-gray-600">Launch the Grab app on your smartphone.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600 font-bold text-xl">2</div>
+                    <h3 class="text-xl font-semibold mb-3">Enter destination</h3>
+                    <p class="text-gray-600">Enter your pickup location and destination.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600 font-bold text-xl">3</div>
+                    <h3 class="text-xl font-semibold mb-3">Choose ride type</h3>
+                    <p class="text-gray-600">Select the ride type that suits your needs.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600 font-bold text-xl">4</div>
+                    <h3 class="text-xl font-semibold mb-3">Confirm booking</h3>
+                    <p class="text-gray-600">Confirm your booking and wait for your driver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-green-600 p-12 text-white">
+                        <h2 class="text-3xl font-bold mb-6">Book a ride now</h2>
+                        <p class="mb-8">Enter your details to book a ride instantly. Our drivers are ready to pick you up.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>Fast and reliable service</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>Verified drivers</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>24/7 customer support</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-12">
+                        <form id="bookingForm" class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Pickup Location</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600" placeholder="Enter pickup location">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Destination</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600" placeholder="Enter destination">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Ride Type</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+                                    <option>GrabCar (4 seats)</option>
+                                    <option>GrabCar Plus (4 seats)</option>
+                                    <option>GrabBike (1 seat)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold text-green-400 mb-4">Grab</div>
+                    <p class="text-gray-400 mb-4">
+                        Southeast Asia's leading super app for transport, food delivery, and digital payments.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">GrabCar</a></li>
+                        <li><a href="#" class="hover:text-white">GrabBike</a></li>
+                        <li><a href="#" class="hover:text-white">GrabFood</a></li>
+                        <li><a href="#" class="hover:text-white">GrabExpress</a></li>
+                        <li><a href="#" class="hover:text-white">GrabPay</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="#" class="hover:text-white">Press</a></li>
+                        <li><a href="#" class="hover:text-white">Investor Relations</a></li>
+                        <li><a href="#" class="hover:text-white">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Safety</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Grab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/transport.js"></script>
+</body>
+</html>

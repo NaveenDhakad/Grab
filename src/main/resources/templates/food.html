@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrabFood - Food Delivery Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="border-b bg-white sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <a href="/" class="text-2xl font-bold text-green-600">Grab</a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="/transport" class="text-gray-700 hover:text-green-600">Transport</a>
+                    <a href="/food" class="text-green-600 font-medium">Food</a>
+                    <a href="/packages" class="text-gray-700 hover:text-green-600">Packages</a>
+                    <a href="/business" class="text-gray-700 hover:text-green-600">Business</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:flex px-4 py-2 text-gray-700 hover:text-green-600">Sign In</button>
+                <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg">Download App</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-orange-50 to-orange-100 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+                        GrabFood
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                        Food delivery made easy
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Order from your favorite restaurants and get food delivered to your doorstep.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-orange-600 hover:bg-orange-700 text-white text-lg px-8 py-4 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-utensils mr-2"></i>
+                            Order Food Now
+                        </button>
+                        <button class="border border-gray-300 text-gray-700 hover:bg-gray-50 text-lg px-8 py-4 rounded-lg flex items-center justify-center">
+                            View Restaurants
+                            <i class="fas fa-chevron-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://via.placeholder.com/500x400/f97316/ffffff?text=GrabFood" 
+                         alt="GrabFood" 
+                         class="mx-auto rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Categories -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Explore food categories</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From local favorites to international cuisines, we have something for everyone.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="group hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden">
+                    <div class="relative h-48">
+                        <img src="https://via.placeholder.com/300x200/f97316/ffffff?text=Fast+Food" alt="Fast Food" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <h3 class="text-white font-semibold text-xl p-4">Fast Food</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden">
+                    <div class="relative h-48">
+                        <img src="https://via.placeholder.com/300x200/10b981/ffffff?text=Healthy" alt="Healthy" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <h3 class="text-white font-semibold text-xl p-4">Healthy</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden">
+                    <div class="relative h-48">
+                        <img src="https://via.placeholder.com/300x200/3b82f6/ffffff?text=Asian" alt="Asian" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <h3 class="text-white font-semibold text-xl p-4">Asian</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group hover:shadow-xl transition-all duration-300 rounded-xl overflow-hidden">
+                    <div class="relative h-48">
+                        <img src="https://via.placeholder.com/300x200/8b5cf6/ffffff?text=Desserts" alt="Desserts" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <h3 class="text-white font-semibold text-xl p-4">Desserts</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Restaurants -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Featured restaurants</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover top-rated restaurants with exclusive deals and offers.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300/f97316/ffffff?text=Restaurant+1" alt="Restaurant 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Burger Palace</h3>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">4.8 ★</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Fast Food • Burgers • 15-25 min</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-600 font-medium">$$ • 2.5 km away</span>
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300/10b981/ffffff?text=Restaurant+2" alt="Restaurant 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Green Bowl</h3>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">4.6 ★</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Healthy • Salads • 20-30 min</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-600 font-medium">$$ • 3.2 km away</span>
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300/3b82f6/ffffff?text=Restaurant+3" alt="Restaurant 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Sushi Express</h3>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">4.9 ★</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Japanese • Sushi • 25-35 min</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-600 font-medium">$$$ • 4.1 km away</span>
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">How GrabFood works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ordering food with GrabFood is quick and easy. Follow these simple steps.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-600 font-bold text-xl">1</div>
+                    <h3 class="text-xl font-semibold mb-3">Browse restaurants</h3>
+                    <p class="text-gray-600">Browse restaurants and menus to find what you're craving.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-600 font-bold text-xl">2</div>
+                    <h3 class="text-xl font-semibold mb-3">Place your order</h3>
+                    <p class="text-gray-600">Select your items and place your order with just a few taps.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-600 font-bold text-xl">3</div>
+                    <h3 class="text-xl font-semibold mb-3">Enjoy your meal</h3>
+                    <p class="text-gray-600">Track your order and enjoy your food when it arrives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold text-green-400 mb-4">Grab</div>
+                    <p class="text-gray-400 mb-4">
+                        Southeast Asia's leading super app for transport, food delivery, and digital payments.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">GrabCar</a></li>
+                        <li><a href="#" class="hover:text-white">GrabBike</a></li>
+                        <li><a href="#" class="hover:text-white">GrabFood</a></li>
+                        <li><a href="#" class="hover:text-white">GrabExpress</a></li>
+                        <li><a href="#" class="hover:text-white">GrabPay</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="#" class="hover:text-white">Press</a></li>
+                        <li><a href="#" class="hover:text-white">Investor Relations</a></li>
+                        <li><a href="#" class="hover:text-white">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Safety</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Grab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/food.js"></script>
+</body>
+</html>
