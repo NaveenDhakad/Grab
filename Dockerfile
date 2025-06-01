@@ -1,29 +1,13 @@
-# Step 1: Use Maven image to build the project
-FROM maven:3.8.5-openjdk-17-slim AS build
-
-# Set working directory
+# Start with a Maven build stage
+FROM maven:3.9.3-eclipse-temurin-17 AS build
 WORKDIR /app
-
-# Copy pom.xml and download dependencies
-COPY pom.xml .
-
-RUN mvn dependency:go-offline
-
-# Now copy all source files
-COPY .. .
-
-# Build the project
+COPY . .
 RUN mvn clean package -DskipTests
 
-# Step 2: Use OpenJDK image to run the app
-FROM openjdk:17-jdk-slim
+# Start a new image from JDK
+FROM eclipse-temurin:17-jdk
 WORKDIR /app
-
-# Copy jar from previous stage
 COPY --from=build /app/target/*.jar app.jar
 
-# Expose port
 EXPOSE 8080
-
-# Run the app
 ENTRYPOINT ["java", "-jar", "app.jar"]
